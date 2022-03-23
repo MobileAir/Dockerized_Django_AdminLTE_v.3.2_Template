@@ -1,0 +1,57 @@
+### Required dependencies ###
+django==3.2.12
+psycopg2-binary==2.9.2
+redis==3.5.3
+djangorestframework==3.13.1
+drf-yasg==1.20.0
+celery==5.2.3
+
+### Optional dependencies ###
+fontawesomefree
+django-extensions==2.2.9
+django-summernote
+
+# AMQP for RabbitMQ
+pyamqp==0.1.0.7
+
+# Filtering
+django-filter==2.4.0
+
+# Cors headers
+django-cors-headers==3.11.0
+
+# Ddos defender: required redis
+django-defender==0.9.1
+
+# for auth system
+django-allauth==0.47.0
+dj-rest-auth==2.2.2
+djangorestframework-simplejwt==5.0.0
+
+# Cashe Support
+django-cacheops==6.0
+django-redis==5.2.0
+
+# ImageField
+pillow==9.0.1
+
+# Translation
+django-rosetta==0.9.8
+
+# Monitoring System
+sentry-sdk==1.5.4
+
+# MicroService Requests
+django-microservice-request==0.5.1
+
+# JsonValidator
+jsonschema==4.4.0
+
+
+# Misc
+pyOpenSSL
+Werkzeug
+channels
+channels_redis
+daphne
+kombu==5.2.4

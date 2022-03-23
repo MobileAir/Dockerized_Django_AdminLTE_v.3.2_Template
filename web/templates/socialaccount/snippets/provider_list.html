@@ -1,0 +1,25 @@
+{% load socialaccount %}
+{% load static %}
+{% get_providers as socialaccount_providers %}
+{% block css %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="{% static 'app/css/social_but.css' %}" />
+{% endblock %}
+
+
+{% for provider in socialaccount_providers %}
+    {% if provider.id == "openid" %}
+        {% for brand in provider.get_brands %}
+        <p>
+          <a title="{{brand.name}}"
+              class="btn btn-block btn-{{provider.id}}"
+              href="{% provider_login_url provider.id openid=brand.openid_url process=process %}">
+              <i class="fab fa-{{provider.id}}"></i>  Login via {{brand.name}}</a>
+        </p>
+        {% endfor %}
+    {% endif %}
+    <p>
+      <a title="{{provider.name}}"  class="btn btn-block btn-{{provider.id}}"
+         href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><i class="fab fa-{{provider.id}}"></i>  Login via {{provider.name}}</a>
+    </p>
+{% endfor %}

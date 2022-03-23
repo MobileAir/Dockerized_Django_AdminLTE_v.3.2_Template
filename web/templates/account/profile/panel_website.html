@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+    <div class="panel-body web">
+        {% if user_profile.profile.website %}
+            <a class="form-control" target="_blank" href="{{ user_profile.profile.website }}">{{ user_profile.profile.website }}</a>
+            <a href='javascript:void(0);' class='change_web'>Change</a>
+        {% else %}
+            <a class="add_website" href="#">Add website</a>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,16 @@
+Django
+django-allauth
+django-extensions
+psycopg2
+gunicorn
+djangorestframework
+djangorestframework-simplejwt
+django-filter
+Pillow
+django-defender
+Pillow
+django-summernote
+
+channels
+channels_redis
+daphne

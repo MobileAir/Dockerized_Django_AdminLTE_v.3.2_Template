@@ -1,0 +1,45 @@
+{% extends "layer.html" %}
+
+{% load i18n %}
+{% load static%}
+{% block title %}{% trans "Sign Up" %}{% endblock %}
+{% block head %}
+<script src="{% static 'app/js/sign_up.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <p class="divider-text"><span class="bg-light">OR</span></p>
+
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <!--suppress XmlInvalidId -->
+                <label for={{ field.id_for_label }} class="cols-sm-2 control-label">{{ field.label }}</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i id="{{ field.html_name }}" class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <script> change_class('{{ field.html_name }}')</script>
+                        {{ field }}
+                    </div>
+                    {{ field.errors}}
+                </div>
+            </div>
+            {% endfor %}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Create account</button>
+            </div>
+        </form>
+    </article>
+</div>
+
+{% endblock %}

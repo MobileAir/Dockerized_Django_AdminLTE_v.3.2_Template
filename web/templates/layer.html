@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Admin Lite{% endblock %} </title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/site.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <script src="{% static 'app/js/jquery-3.4.1.min.js' %}"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'app/favicon.ico' %}"/>
+    <script src="https://kit.fontawesome.com/fe539a9d82.js" crossorigin="anonymous"></script>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">AdminLte</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'main:index' %}"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'adminlte:index' %}"><i class="fa fa-home"></i> AdminLte</a></li>
+                </ul>
+                {% include 'loginpartial.html' %}
+                <ul class="nav navbar-nav ">
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+    {% block content %}{% endblock %}
+        <hr/>
+        <footer>
+            <p>&copy; {% now "Y" %} - Admin Lte</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/js/bootstrap.js' %}"></script>
+    {% block scripts %}{% endblock %}
+    <script>
+        $(document).ready(function(){
+            {% block jquery %} {% endblock %}
+        })
+    </script>
+
+</body>
+</html>
