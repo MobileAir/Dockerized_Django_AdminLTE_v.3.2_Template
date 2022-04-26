@@ -6,7 +6,7 @@ channels_redis
 celery==5.2.3
 coverage[toml]==6.3.1
 daphne
-django==3.2.12
+django==3.2.13
 django-extensions==2.2.9
 django-summernote
 django-stubs==1.9.0
