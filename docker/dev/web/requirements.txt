@@ -34,7 +34,7 @@ isort==5.10.1
 jsonschema==4.4.0
 kombu
 mypy==0.931
-pillow==9.0.1
+pillow==9.3.0
 pipdeptree==2.2.1
 psycopg2-binary==2.9.2
 pyamqp==0.1.0.7
