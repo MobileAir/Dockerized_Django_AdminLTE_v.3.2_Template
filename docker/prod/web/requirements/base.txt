@@ -33,7 +33,7 @@ django-cacheops==6.0
 django-redis==5.2.0
 
 # ImageField
-pillow==9.0.1
+pillow==9.3.0
 
 # Translation
 django-rosetta==0.9.8
