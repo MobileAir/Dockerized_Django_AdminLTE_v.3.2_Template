@@ -1,7 +1,7 @@
 ### Required dependencies ###
 django==3.2.14
 psycopg2-binary==2.9.2
-redis==3.5.3
+redis==4.5.3
 djangorestframework==3.13.1
 drf-yasg==1.20.0
 celery==5.2.3
